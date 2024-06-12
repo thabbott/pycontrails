@@ -245,17 +245,17 @@ class CocipParams(ModelParams):
 
     #: Minimum altitude domain in simulation, [:math:`m`]
     #: If set to ``None``, this check is disabled.
-    min_altitude_m: float | None = 6000.0
+    min_altitude_m: float | None = 5000.0
 
     #: Maximum altitude domain in simulation, [:math:`m`]
     #: If set to ``None``, this check is disabled.
     max_altitude_m: float | None = 13000.0
 
     #: Maximum contrail segment length in simulation to prevent unrealistic values, [:math:`m`].
-    max_seg_length_m: float = 40000.0
+    max_seg_length_m: float = 70000.0
 
     #: Max age of contrail evolution.
-    max_age: np.timedelta64 = np.timedelta64(20, "h")
+    max_age: np.timedelta64 = np.timedelta64(12, "h")
 
     #: Minimum contrail optical depth.
     min_tau: float = 1e-6
