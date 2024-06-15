@@ -22,7 +22,7 @@ class DryAdvectionParams(models.ModelParams):
 
     #: Apply Euler's method with a fixed step size of ``dt_integration``. Advected waypoints
     #: are interpolated against met data once each ``dt_integration``.
-    dt_integration: np.timedelta64 = np.timedelta64(30, "m")
+    dt_integration: np.timedelta64 = np.timedelta64(100, "s")
 
     #: Max age of plume evolution.
     max_age: np.timedelta64 = np.timedelta64(20, "h")
