@@ -25,7 +25,7 @@ class DryAdvectionParams(models.ModelParams):
     dt_integration: np.timedelta64 = np.timedelta64(100, "s")
 
     #: Max age of plume evolution.
-    max_age: np.timedelta64 = np.timedelta64(20, "h")
+    max_age: np.timedelta64 = np.timedelta64(12, "h")
 
     #: Difference in altitude between top and bottom layer for stratification calculations,
     #: [:math:`m`]. Used to approximate derivative of "lagrangian_tendency_of_air_pressure"
