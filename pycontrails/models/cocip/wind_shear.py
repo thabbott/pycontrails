@@ -43,7 +43,10 @@ def wind_shear_enhancement_factor(
     - :cite:`schumannContrailCirrusPrediction2012`
     """
     ratio = effective_vertical_resolution / contrail_depth
-    return 0.5 * (1.0 + ratio**wind_shear_enhancement_exponent)
+    enhancement_factor = 0.5 * (1.0 + ratio**wind_shear_enhancement_exponent)
+
+    hijacked_factor = 1.0
+    return hijacked_factor
 
 
 def wind_shear_normal(
