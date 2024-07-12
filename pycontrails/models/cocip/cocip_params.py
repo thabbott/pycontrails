@@ -252,7 +252,7 @@ class CocipParams(ModelParams):
     max_altitude_m: float | None = 13000.0
 
     #: Maximum contrail segment length in simulation to prevent unrealistic values, [:math:`m`].
-    max_seg_length_m: float = 70000.0
+    max_seg_length_m: float = 40000.0
 
     #: Max age of contrail evolution.
     max_age: np.timedelta64 = np.timedelta64(12, "h")
