@@ -245,7 +245,7 @@ class CocipParams(ModelParams):
 
     #: Minimum altitude domain in simulation, [:math:`m`]
     #: If set to ``None``, this check is disabled.
-    min_altitude_m: float | None = 5000.0
+    min_altitude_m: float | None = 6000.0
 
     #: Maximum altitude domain in simulation, [:math:`m`]
     #: If set to ``None``, this check is disabled.
