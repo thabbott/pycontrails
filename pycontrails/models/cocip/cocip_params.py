@@ -255,7 +255,7 @@ class CocipParams(ModelParams):
     max_seg_length_m: float = 40000.0
 
     #: Max age of contrail evolution.
-    max_age: np.timedelta64 = np.timedelta64(16, "h")
+    max_age: np.timedelta64 = np.timedelta64(24, "h")
 
     #: Minimum contrail optical depth.
     min_tau: float = 1e-6
