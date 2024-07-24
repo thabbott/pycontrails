@@ -258,7 +258,7 @@ class CocipParams(ModelParams):
     max_age: np.timedelta64 = np.timedelta64(24, "h")
 
     #: Minimum contrail optical depth.
-    min_tau: float = 1e-6
+    min_tau: float = 1e-13
 
     #: Maximum contrail optical depth to prevent unrealistic values.
     max_tau: float = 1e10
