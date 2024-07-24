@@ -258,13 +258,13 @@ class CocipParams(ModelParams):
     max_age: np.timedelta64 = np.timedelta64(24, "h")
 
     #: Minimum contrail optical depth.
-    min_tau: float = 1e-13
+    min_tau: float = 0
 
     #: Maximum contrail optical depth to prevent unrealistic values.
     max_tau: float = 1e10
 
     #: Minimum contrail ice particle number per volume of air.
-    min_n_ice_per_m3: float = 1e7
+    min_n_ice_per_m3: float = 1e3
 
     #: Maximum contrail ice particle number per volume of air to prevent unrealistic values.
     max_n_ice_per_m3: float = 1e20
