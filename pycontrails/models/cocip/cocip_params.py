@@ -264,7 +264,7 @@ class CocipParams(ModelParams):
     max_tau: float = 1e10
 
     #: Minimum contrail ice particle number per volume of air.
-    min_n_ice_per_m3: float = 1
+    min_n_ice_per_m3: float = 1e7
 
     #: Maximum contrail ice particle number per volume of air to prevent unrealistic values.
     max_n_ice_per_m3: float = 1e20
