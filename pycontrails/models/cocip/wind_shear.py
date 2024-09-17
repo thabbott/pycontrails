@@ -111,7 +111,7 @@ def wind_shear_normal(
         nan_present = False
 
     mask = np.full(dsn_dz.shape, True)
-    dsn_dz = np.where(mask, chosen_shear, dsn_dz)
+    dsn_dz = np.where(mask, -chosen_shear, dsn_dz)
     min_shear = np.min(dsn_dz)
 
     if chosen_shear != 2e-3 or nan_present:
