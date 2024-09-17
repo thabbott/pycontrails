@@ -123,30 +123,28 @@ def wind_shear(
 
     ds_dz = (du_dz**2 + dv_dz**2) ** 0.5
 
-    # # Set shear to the closest value 
-    # shear_max = np.max(ds_dz)
+    # Set shear to the closest value 
+    shear_max = np.max(ds_dz)
 
-    # shear_options = [2e-3, 4e-3, 6e-3]
-    # shear_distance = []
+    shear_options = [2e-3, 4e-3, 6e-3]
+    shear_distance = []
 
-    # for shear in shear_options:
-    #     shear_distance.append(np.abs(shear_options - shear_max))
+    for shear in shear_options:
+        shear_distance.append(np.abs(shear_options - shear_max))
 
-    # shear_options = np.array(shear_options)
-    # shear_distance = np.array(shear_distance)
+    shear_options = np.array(shear_options)
+    shear_distance = np.array(shear_distance)
 
-    # index_min = np.argmin(shear_distance)
-    # chosen_shear = shear_options[index_min]
-    # if np.isnan(ds_dz): chosen_shear = 2e-3
+    index_min = np.argmin(shear_distance)
+    chosen_shear = shear_options[index_min]
+    if np.isnan(ds_dz).any(): chosen_shear = 2e-3
 
-    # print(ds_dz)
+    mask = np.full(ds_dz.shape, True)
+    ds_dz = np.where(mask, chosen_shear, ds_dz)
+    min_shear = np.min(ds_dz)
+    max_shear = np.max(ds_dz)
 
-    # mask = np.zeros(ds_dz.shape)
-    # ds_dz = np.where(mask < 1, chosen_shear, ds_dz)
-    # min_shear = np.min(ds_dz)
-    # max_shear = np.max(ds_dz)
-
-    # print("Minimum shear: " + str(min_shear))
-    # print("Maximum shear: " + str(max_shear))
+    print("Minimum shear: " + str(min_shear))
+    print("Maximum shear: " + str(max_shear))
 
     return ds_dz
