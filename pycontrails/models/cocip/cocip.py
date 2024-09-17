@@ -2054,7 +2054,6 @@ def calc_contrail_properties(
         effective_vertical_resolution=effective_vertical_resolution,
         wind_shear_enhancement_exponent=wind_shear_enhancement_exponent,
     )
-
     ds_dz = ds_dz * shear_enhancement
     dsn_dz = dsn_dz * shear_enhancement
     print("Normal shear: " + str(np.min(dsn_dz)))

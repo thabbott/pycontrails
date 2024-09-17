@@ -86,7 +86,12 @@ def wind_shear_normal(
     """
     du_dz = (u_wind_top - u_wind_btm) / dz
     dv_dz = (v_wind_top - v_wind_btm) / dz
-    return dv_dz * cos_a - du_dz * sin_a
+    dsn_dz = dv_dz * cos_a - du_dz * sin_a
+
+    mask = np.full(dsn_dz.shape, True)
+    dsn_dz = np.where(mask, 0, dsn_dz)
+    
+    return dsn_dz
 
 
 def wind_shear(
@@ -140,6 +145,7 @@ def wind_shear(
     if np.isnan(ds_dz).any():
         chosen_shear = 2e-3
         nan_present = True
+        print("Removed NaN!")
     else:
         nan_present = False
 
