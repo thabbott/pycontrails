@@ -2056,7 +2056,6 @@ def calc_contrail_properties(
     )
     ds_dz = ds_dz * shear_enhancement
     dsn_dz = dsn_dz * shear_enhancement
-    print("Normal shear: " + str(np.min(dsn_dz)))
 
     # effective area
     area_eff = contrail_properties.plume_effective_cross_sectional_area(width, depth, sigma_yz)
