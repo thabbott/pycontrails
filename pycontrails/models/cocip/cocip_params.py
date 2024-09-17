@@ -63,7 +63,7 @@ class CocipParams(ModelParams):
 
     #: Apply Euler's method with a fixed step size of ``dt_integration``. Advected waypoints
     #: are interpolated against met data once each ``dt_integration``.
-    dt_integration: np.timedelta64 = np.timedelta64(1, "m")
+    dt_integration: np.timedelta64 = np.timedelta64(10, "m")
 
     #: Difference in altitude between top and bottom layer for stratification calculations,
     #: [:math:`m`]. Used to approximate derivative of "lagrangian_tendency_of_air_pressure" layer.
