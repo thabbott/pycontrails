@@ -2048,7 +2048,6 @@ def calc_contrail_properties(
     rsr = contrail["rsr"]
     olr = contrail["olr"]
 
-    shear enhancements
     shear_enhancement = wind_shear.wind_shear_enhancement_factor(
         contrail_depth=depth,
         effective_vertical_resolution=effective_vertical_resolution,
