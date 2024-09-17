@@ -2053,35 +2053,9 @@ def calc_contrail_properties(
         effective_vertical_resolution=effective_vertical_resolution,
         wind_shear_enhancement_exponent=wind_shear_enhancement_exponent,
     )
-    
-    # # Set shear to the closest value 
-    # shear_max = np.max(ds_dz)
-
-    # shear_options = [2e-3, 4e-3, 6e-3]
-    # shear_distance = []
-
-    # for shear in shear_options:
-    #     shear_distance.append(np.abs(shear_options - shear_max))
-
-    # shear_options = np.array(shear_options)
-    # shear_distance = np.array(shear_distance)
-
-    # index_min = np.argmin(shear_distance)
-    # chosen_shear = shear_options[index_min]
-    # shear_enhancement = chosen_shear/shear_max
 
     ds_dz = ds_dz * shear_enhancement
-    min_shear = np.min(ds_dz)
-    max_shear = np.max(ds_dz)
-
-    print("Minimum shear: " + str(min_shear))
-    print("Maximum shear: " + str(max_shear))
-    
-    # if np.isnan(min_shear) or np.isnan(max_shear):
-    #     print("Minimum shear: " + str(min_shear))
-    #     print("Maximum shear: " + str(max_shear))
-
-    dsn_dz = dsn_dz * 1
+    dsn_dz = dsn_dz * shear_enhancement
 
     # effective area
     area_eff = contrail_properties.plume_effective_cross_sectional_area(width, depth, sigma_yz)
