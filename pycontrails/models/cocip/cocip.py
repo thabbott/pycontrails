@@ -2048,6 +2048,7 @@ def calc_contrail_properties(
     rsr = contrail["rsr"]
     olr = contrail["olr"]
 
+    # shear enhancements
     shear_enhancement = wind_shear.wind_shear_enhancement_factor(
         contrail_depth=depth,
         effective_vertical_resolution=effective_vertical_resolution,
@@ -2056,6 +2057,7 @@ def calc_contrail_properties(
 
     ds_dz = ds_dz * shear_enhancement
     dsn_dz = dsn_dz * shear_enhancement
+    print("Normal shear: " + str(np.min(dsn_dz)))
 
     # effective area
     area_eff = contrail_properties.plume_effective_cross_sectional_area(width, depth, sigma_yz)

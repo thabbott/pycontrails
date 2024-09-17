@@ -137,14 +137,19 @@ def wind_shear(
 
     index_min = np.argmin(shear_distance)
     chosen_shear = shear_options[index_min]
-    if np.isnan(ds_dz).any(): chosen_shear = 2e-3
+    if np.isnan(ds_dz).any():
+        chosen_shear = 2e-3
+        nan_present = True
+    else:
+        nan_present = False
 
     mask = np.full(ds_dz.shape, True)
     ds_dz = np.where(mask, chosen_shear, ds_dz)
     min_shear = np.min(ds_dz)
     max_shear = np.max(ds_dz)
 
-    print("Minimum shear: " + str(min_shear))
-    print("Maximum shear: " + str(max_shear))
+    if chosen_shear != 2e-3 or nan_present:
+        print("Minimum shear: " + str(min_shear))
+        print("Maximum shear: " + str(max_shear))
 
     return ds_dz
