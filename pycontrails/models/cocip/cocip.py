@@ -2071,8 +2071,13 @@ def calc_contrail_properties(
     # shear_enhancement = chosen_shear/shear_max
 
     ds_dz = ds_dz * shear_enhancement
-    print("Minimum shear: " + str(np.min(ds_dz)) + "\n")
-    print("Maximum shear: " + str(np.max(ds_dz)) + "\n")
+    min_shear = np.min(ds_dz)
+    max_shear = np.max(ds_dz)
+
+    if np.isnan(min_shear) or np.isnan(max_shear):
+        print("Minimum shear: " + str(min_shear))
+        print("Maximum shear: " + str(max_shear))
+        
     dsn_dz = dsn_dz * 1
 
     # effective area
