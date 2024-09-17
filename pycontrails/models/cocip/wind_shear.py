@@ -139,6 +139,8 @@ def wind_shear(
     chosen_shear = shear_options[index_min]
     if np.isnan(ds_dz): chosen_shear = 2e-3
 
+    print(ds_dz)
+
     mask = np.zeros(ds_dz.shape)
     ds_dz = np.where(mask < 1, chosen_shear, ds_dz)
     min_shear = np.min(ds_dz)
