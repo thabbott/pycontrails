@@ -1142,8 +1142,7 @@ def segment_length_ratio(
     """
     is_defined = (seg_length_t2 > 0.0) & np.isfinite(seg_length_t1)
     default_value = np.ones_like(seg_length_t1)
-    # return np.divide(seg_length_t1, seg_length_t2, out=default_value, where=is_defined)
-    return default_value
+    return np.divide(seg_length_t1, seg_length_t2, out=default_value, where=is_defined)
 
 
 def plume_temporal_evolution(
