@@ -448,4 +448,7 @@ def brunt_vaisala_frequency(p: np.ndarray, T: np.ndarray, T_grad: np.ndarray) ->
     """
     theta = T_potential(T, p)
     T_grad.clip(min=1e-6, out=T_grad)
-    return (T_grad * constants.g / theta) ** 0.5
+    # return (T_grad * constants.g / theta) ** 0.5
+
+    print("B-V freq. changed to 0.01 Hz")
+    return np.ones_like(T_grad) * 0.01
