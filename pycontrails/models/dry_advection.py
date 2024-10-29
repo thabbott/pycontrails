@@ -37,7 +37,7 @@ class DryAdvectionParams(models.ModelParams):
     dz_m: float = 200.0
 
     #: Upper bound for evolved plume depth, constraining it to realistic values.
-    max_depth: float | None = 1500.0
+    max_depth: float | None = np.inf
 
     #: Initial plume width, [:math:`m`]. Overridden by "width" key on :attr:`source`.
     # If None, only pointwise advection is simulated without wind shear effects.

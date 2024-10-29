@@ -203,7 +203,7 @@ class CocipParams(ModelParams):
     #: CoCiP only uses the ambient conditions at the mid-point of the Gaussian plume,
     #: and the edges could be in subsaturated conditions and sublimate. Important when
     #: :attr:`radiative_heating_effects` is enabled.
-    max_depth: float = 1500.0
+    max_depth: float = np.inf
 
     #: Experimental. Improved ice crystal number survival fraction in the wake vortex phase.
     #: Implement :cite:`unterstrasserPropertiesYoungContrails2016`, who developed a
